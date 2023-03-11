@@ -1,0 +1,35 @@
+.form-element {
+  display: grid;
+  color: var(--black);
+  font-weight: var(--fw-500);
+  font-size: var(--fs-18);
+  line-height: var(--lh-21);
+  width: 400px;
+  margin: 0 20px 0 0;
+  &:first-child {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  &__label {
+    display: flex;
+    flex-direction: column;
+    color: var(--black-50);
+    font-size: var(--fs-14);
+    line-height: var(--lh-16);
+    font-family: var(--ff);
+    input {
+      margin-top: 7px;
+    }
+    &_required {
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "*";
+        display: block;
+        right: -8px;
+        font-size: 16px;
+        color: var(--red);
+      }
+    }
+  }
+}

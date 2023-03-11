@@ -1,0 +1,16 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--ff);
+    font-style: normal;
+}
+
+body {
+    background-color: var(--bg-white);
+}
+
+a {
+    text-decoration: none;
+}

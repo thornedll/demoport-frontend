@@ -1,0 +1,14 @@
+.input_read-only {
+  border: none;
+  background: transparent;
+  color: var(--black);
+  font-weight: var(--fw-500);
+  font-size: var(--fs-18);
+  line-height: var(--lh-21);
+  cursor: default;
+  height: 36px;
+  &:focus,
+  &:active {
+    border: none;
+  }
+}

@@ -1,0 +1,23 @@
+.select {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-400);
+  line-height: var(--lh-19);
+  width: 400px;
+  margin-top: 5px;
+}
+
+.select:disabled {
+  background-color: var(--line);
+  border-color: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.select:not(.select-multi) {
+  height: 40px;
+}
+
+.select-multi {
+  min-height: 40px;
+  height: auto;
+}

@@ -1,0 +1,223 @@
+{
+  "users": [
+    {
+      "firstName": "Иван",
+      "lastName": "Иванов",
+      "email": "ivanov_i@demoport.com",
+      "password": "11111111"
+    }
+  ],
+  "services": [
+    {
+      "id": "0001",
+      "isArchive": false,
+      "complexCode": "10.10.10.10.11",
+      "businessLine": "Облачные услуги",
+      "businessLineCode": 10,
+      "serviceLine": "Услуги DF Cloud",
+      "serviceLineCode": 10,
+      "service": "DF Cloud On Demand",
+      "serviceCode": 10,
+      "serviceElement": "Вычислительные работы",
+      "serviceElementCode": 10,
+      "tariff": "Low 150",
+      "tariffCode": 11,
+      "tarifficationElement": "ВМ vCPU",
+      "tarifficationUnit": "ВМ vCPU",
+      "tariffType": "usage based",
+      "recalculation": true
+    },
+    {
+      "id": "0002",
+      "isArchive": true,
+      "complexCode": "10.10.10.10.21",
+      "businessLine": "Облачные услуги",
+      "businessLineCode": 10,
+      "serviceLine": "Услуги DF Cloud",
+      "serviceLineCode": 10,
+      "service": "DF Cloud On Demand",
+      "serviceCode": 10,
+      "serviceElement": "Вычислительные работы",
+      "serviceElementCode": 10,
+      "tariff": "Low 150",
+      "tariffCode": 21,
+      "tarifficationElement": "ВМ vRAM",
+      "tarifficationUnit": "1 vRAM GB*час",
+      "tariffType": "flat rate",
+      "recalculation": false
+    },
+    {
+      "id": "0003",
+      "isArchive": false,
+      "complexCode": "10.10.10.10.11",
+      "businessLine": "Облачные услуги",
+      "businessLineCode": 10,
+      "serviceLine": "Услуги DF Cloud",
+      "serviceLineCode": 10,
+      "service": "DF Cloud On Demand",
+      "serviceCode": 10,
+      "serviceElement": "Вычислительные работы",
+      "serviceElementCode": 10,
+      "tariff": "Low 150",
+      "tariffCode": 11,
+      "tarifficationElement": "ВМ vCPU",
+      "tarifficationUnit": "ВМ vCPU",
+      "tariffType": "usage based",
+      "recalculation": true
+    },
+    {
+      "id": "0004",
+      "isArchive": true,
+      "complexCode": "10.10.10.10.21",
+      "businessLine": "Облачные услуги",
+      "businessLineCode": 10,
+      "serviceLine": "Услуги DF Cloud",
+      "serviceLineCode": 10,
+      "service": "DF Cloud On Demand",
+      "serviceCode": 10,
+      "serviceElement": "Вычислительные работы",
+      "serviceElementCode": 10,
+      "tariff": "Low 150",
+      "tariffCode": 21,
+      "tarifficationElement": "ВМ vRAM",
+      "tarifficationUnit": "1 vRAM GB*час",
+      "tariffType": "flat rate",
+      "recalculation": false
+    },
+    {
+      "id": "0005",
+      "isArchive": false,
+      "complexCode": "10.10.10.10.11",
+      "businessLine": "Облачные услуги",
+      "businessLineCode": 10,
+      "serviceLine": "Услуги DF Cloud",
+      "serviceLineCode": 10,
+      "service": "DF Cloud On Demand",
+      "serviceCode": 10,
+      "serviceElement": "Вычислительные работы",
+      "serviceElementCode": 10,
+      "tariff": "Low 150",
+      "tariffCode": 11,
+      "tarifficationElement": "ВМ vCPU",
+      "tarifficationUnit": "ВМ vCPU",
+      "tariffType": "usage based",
+      "recalculation": true
+    },
+    {
+      "id": "0006",
+      "isArchive": true,
+      "complexCode": "10.10.10.10.21",
+      "businessLine": "Облачные услуги",
+      "businessLineCode": 10,
+      "serviceLine": "Услуги DF Cloud",
+      "serviceLineCode": 10,
+      "service": "DF Cloud On Demand",
+      "serviceCode": 10,
+      "serviceElement": "Вычислительные работы",
+      "serviceElementCode": 10,
+      "tariff": "Low 150",
+      "tariffCode": 21,
+      "tarifficationElement": "ВМ vRAM",
+      "tarifficationUnit": "1 vRAM GB*час",
+      "tariffType": "flat rate",
+      "recalculation": false
+    },
+    {
+      "id": "0007",
+      "isArchive": false,
+      "complexCode": "10.10.10.10.11",
+      "businessLine": "Облачные услуги",
+      "businessLineCode": 10,
+      "serviceLine": "Услуги DF Cloud",
+      "serviceLineCode": 10,
+      "service": "DF Cloud On Demand",
+      "serviceCode": 10,
+      "serviceElement": "Вычислительные работы",
+      "serviceElementCode": 10,
+      "tariff": "Low 150",
+      "tariffCode": 11,
+      "tarifficationElement": "ВМ vCPU",
+      "tarifficationUnit": "ВМ vCPU",
+      "tariffType": "usage based",
+      "recalculation": true
+    },
+    {
+      "id": "0008",
+      "isArchive": true,
+      "complexCode": "10.10.10.10.21",
+      "businessLine": "Облачные услуги",
+      "businessLineCode": 10,
+      "serviceLine": "Услуги DF Cloud",
+      "serviceLineCode": 10,
+      "service": "DF Cloud On Demand",
+      "serviceCode": 10,
+      "serviceElement": "Вычислительные работы",
+      "serviceElementCode": 10,
+      "tariff": "Low 150",
+      "tariffCode": 21,
+      "tarifficationElement": "ВМ vRAM",
+      "tarifficationUnit": "1 vRAM GB*час",
+      "tariffType": "flat rate",
+      "recalculation": false
+    }
+  ],
+  "select-values": [
+    {
+      "businessLine": [
+        { "value": 10, "label": "Облачные услуги" },
+        { "value": 11, "label": "Небесные услуги" },
+        { "value": 12, "label": "Туманные услуги" }
+      ]
+    },
+    {
+      "serviceLine": [
+        { "value": 10, "label": "Услуги DF Cloud" },
+        { "value": 11, "label": "Услуги DF Sky" }
+      ]
+    },
+    {
+      "service": [
+        { "value": 10, "label": "DF Cloud On Demand" },
+        { "value": 11, "label": "DF Sky Off Demand" }
+      ]
+    },
+    {
+      "serviceElement": [
+        { "value": 10, "label": "Вычислительные работы" },
+        { "value": 11, "label": "Минимальный счет" }
+      ]
+    },
+    {
+      "tariff": [
+        { "value": 10, "label": "Low 150" },
+        { "value": 21, "label": "Medium 300" },
+        { "value": 31, "label": "High 600" }
+      ]
+    },
+    {
+      "tarifficationElement": [
+        { "value": 10, "label": "ВМ vCPU" },
+        { "value": 11, "label": "ВМ vRAM" }
+      ]
+    },
+    {
+      "tarifficationUnit": [
+        { "value": 10, "label": "ВМ vCPU" },
+        { "value": 11, "label": "1 vRAM GB*час" },
+        { "value": 12, "label": "1 Пул ресурсов" }
+      ]
+    },
+    {
+      "tariffType": [
+        { "value": 10, "label": "usage based" },
+        { "value": 11, "label": "flat rate" }
+      ]
+    },
+    {
+      "recalculation": [
+        { "value": true, "label": "Да" },
+        { "value": false, "label": "Нет" }
+      ]
+    }
+  ]
+}

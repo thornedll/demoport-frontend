@@ -1,0 +1,93 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 6px;
+    color: var(--white);
+    font-weight: var(--fw-500);
+    font-size: var(--fs-16);
+    line-height: var(--lh-19);
+    border: none;
+    background: var(--green-accent);
+    &:hover {
+        background: var(--green-hover);
+        cursor: pointer;
+    }
+    &:active {
+        background: var(--green-active);
+        cursor: pointer;
+    }
+    &:disabled {
+        background: var(--gray-border);
+        cursor: not-allowed;
+    }
+    &__add {
+        width: 190px;
+    }
+    &__edit-table {
+        width: 204px;
+    }
+    &__transparent,
+    &__copy {
+        background: transparent;
+        border: 2px solid var(--green-accent);
+        color: var(--green-accent);
+        display: flex;
+        &:hover {
+            border: 2px solid var(--green-hover);
+            cursor: pointer;
+            background: transparent;
+            color: var(--green-hover);
+        }
+        &:active {
+            border: 2px solid var(--green-active);
+            cursor: pointer;
+            background: transparent;
+            color: var(--green-active);
+        }
+        &:disabled {
+            border: 2px solid var(--gray-border);
+            cursor: not-allowed;
+            background: transparent;
+            color: var(--gray-border);
+        }
+    }
+    &__copy {
+        width: 153px;
+    }
+    &__icon {
+        display: flex;
+        gap: 10px;
+    }
+    &__delete {
+        background: transparent;
+        border: 2px solid var(--red);
+        color: var(--red);
+        display: flex;
+        &:hover {
+            border: 2px solid var(--red-hover);
+            cursor: pointer;
+            background: transparent;
+            color: var(--red-hover);
+        }
+        &:active {
+            border: 2px solid var(--red);
+            cursor: pointer;
+            background: transparent;
+            color: var(--red);
+        }
+        &:disabled {
+            border: 2px solid var(--gray-border);
+            cursor: not-allowed;
+            background: transparent;
+            color: var(--gray-border);
+        }
+    }
+    &_custom-width-300 {
+        width: 300px;
+    }
+  }
+  

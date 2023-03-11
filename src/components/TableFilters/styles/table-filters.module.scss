@@ -1,0 +1,30 @@
+.filters {
+  display: flex;
+  gap: 45px;
+  margin: 0 0 10px 35px;
+  &-list {
+    display: flex;
+    gap: 20px;
+    height: 40px;
+  }
+  &-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    &__button {
+      cursor: pointer;
+      font-size: var(--fs-14);
+      font-weight: var(--fw-500);
+      line-height: var(--lh-16);
+      opacity: 0.5;
+      display: flex;
+      gap: 5px;
+      background: none;
+      border: none;
+      &:hover {
+        color: var(--green-accent);
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+.row-element {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  color: var(--black);
+  background: var(--white);
+  &:hover {
+    background: linear-gradient(
+        0deg,
+        rgba(0, 155, 164, 0.07),
+        rgba(0, 155, 164, 0.07)
+      ),
+      #ffffff;
+  }
+  &__archive {
+    color: var(--red);
+    background: var(--red-05);
+  }
+  div {
+    &:nth-child(3) {
+      // min-width: 116px;
+      min-width: calc(116px + 20px);
+    }
+    &:nth-child(4) {
+      // min-width: 118px;
+      min-width: calc(118px + 20px);
+    }
+    &:nth-child(5) {
+      width: 45px;
+      // width: calc(45px + 20px);
+      justify-content: center;
+    }
+    &:nth-child(6),
+    &:nth-child(8) {
+      // min-width: 134px;
+      min-width: calc(134px + 20px);
+    }
+    &:nth-child(7) {
+      width: 77px;
+      // width: calc(77px + 20px);
+      justify-content: center;
+    }
+    &:nth-child(9) {
+      // width: 46px;
+      width: calc(46px + 20px);
+      justify-content: center;
+    }
+    &:nth-child(10) {
+      // min-width: 143px;
+      min-width: calc(143px + 20px);
+    }
+    &:nth-child(11) {
+      // width: 64px;
+      width: calc(64px + 20px);
+      justify-content: center;
+    }
+    &:nth-child(12) {
+      // min-width: 90px;
+      min-width: calc(90px + 20px);
+    }
+    &:nth-child(13) {
+      // width: 66px;
+      width: calc(66px + 20px);
+      justify-content: center;
+    }
+    &:nth-child(14),
+    &:nth-child(15) {
+      // min-width: 133px;
+      min-width: calc(133px + 20px);
+    }
+    &:nth-child(16),
+    &:nth-child(17) {
+      // width: 95px;
+      min-width: calc(95px + 20px);
+    }
+    border-right: 1px solid var(--line);
+    // margin: 0 10px;
+    padding: 0 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: var(--fs-14);
+    font-weight: var(--fw-400);
+    line-height: var(--lh-16);
+    &:first-child {
+      border: none;
+      padding: 0 11px 0 15px;
+    }
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+.edit-button {
+  height: 18px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  svg {
+    color: var(--gray-border);
+  }
+  &:hover {
+    svg {
+      color: var(--green-accent);
+    }
+  }
+}

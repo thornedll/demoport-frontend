@@ -1,0 +1,38 @@
+:root {
+    --black: #002C44;
+    --black-30: rgba(0, 44, 68, .3);
+    --black-50: rgba(0, 44, 68, .5);
+    --white: #FFFFFF;
+    --green-accent: #0073A4;
+    --green-hover: #0397C6;
+    --green-active: #036F9D;
+    --gray-border: #BFCAD0;
+    --bg-white: #F6F8FA;
+    --line: #E6EAED;
+    --red: #E72525;
+    --red-05: rgba(231, 37, 37, .05);
+    --red-hover: #FF0000;
+    --hover: #EDF8F8;
+    --gray-25: rgba(0, 44, 68, .25);
+    --gray-50: rgba(0, 44, 68, .5);
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+
+    --fs-14: 14px;
+    --fs-16: 16px;
+    --fs-18: 18px;
+    --fs-24: 24px;
+    
+    --lh-16: 16px;
+    --lh-19: 19px;
+    --lh-20: 20px;
+    --lh-21: 21px;
+    --lh-38: 38px;
+
+    --ff: 'Roboto', sans-serif;
+    
+    --check-image: url("../img/check.svg");
+    --close-image: url("../img/close.svg");
+}
