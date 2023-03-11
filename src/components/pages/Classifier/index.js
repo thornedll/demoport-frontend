@@ -12,6 +12,7 @@ const Classifier = () => {
       id: c.id,
       index: index,
       label: c.label,
+      shortLabel: c.shortLabel,
       active: true,
       width: c.width
     }))

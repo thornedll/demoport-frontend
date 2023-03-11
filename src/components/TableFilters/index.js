@@ -2,11 +2,15 @@ import Checkbox from "../ui/Checkbox";
 import style from "./styles/table-filters.module.scss";
 
 const TableFilters = ({ isAnyChecked, toggleAllCheckedRows, columns }) => {
-  const parametersItems = columns.map((param) =>
-    param.active ? (
-      <li key={param.id} className={style["filters-item"]}>
+  const columnetersItems = columns.map((column) =>
+    column.active ? (
+      <li
+        key={column.id}
+        className={style["filters-item"]}
+        style={{ width: column.width + 1 }}
+      >
         <button className={style["filters-item__button"]}>
-          {param.label}
+          {column.shortLabel ? column.shortLabel : column.label}
           <svg
             width="14"
             height="14"
@@ -30,11 +34,8 @@ const TableFilters = ({ isAnyChecked, toggleAllCheckedRows, columns }) => {
 
   return (
     <div className={style["filters"]}>
-      <Checkbox
-        checked={isAnyChecked}
-        onChange={handleChange}
-      />
-      <ul className={style["filters-list"]}>{parametersItems}</ul>
+      <Checkbox checked={isAnyChecked} onChange={handleChange} />
+      <ul className={style["filters-list"]}>{columnetersItems}</ul>
     </div>
   );
 };

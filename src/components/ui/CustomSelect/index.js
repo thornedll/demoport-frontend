@@ -2,28 +2,20 @@ import Select from "react-select";
 import classNames from "classnames";
 import style from "./styles/select.module.scss";
 
-const baseCustomStyles = (error = false) => {
+const baseCustomStyles = () => {
   return {
     control: (base, { isDisabled }) => {
       return {
         ...base,
         minHeight: "100%",
         maxHeight: "100%",
-        border: error
-          ? "2px solid var(--red)"
-          : isDisabled
+        border: isDisabled
           ? "none"
           : "2px solid var(--gray-25)",
         boxShadow: "none",
         borderRadius: "6px",
         opacity: isDisabled ? "0.5" : "1",
-        backgroundColor: isDisabled ? "#f8f9fa" : "var(--white)",
-        "&:hover": {
-          borderColor: error ? "var(--red)" : "var(--gray-50)"
-        },
-        "&:focus": {
-          borderColor: error ? "var(--red)" : "var(--gray-50)"
-        }
+        backgroundColor: isDisabled ? "#f8f9fa" : "var(--white)"
       };
     },
     input: (base) => ({
@@ -120,7 +112,7 @@ const CustomSelect = ({
         id={id}
         isMulti={isMulti}
         className={classes}
-        styles={baseCustomStyles(err)}
+        styles={baseCustomStyles()}
         placeholder=""
         components={{ DropdownIndicator }}
         options={options}

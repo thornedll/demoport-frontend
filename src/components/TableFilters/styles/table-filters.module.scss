@@ -4,13 +4,14 @@
   margin: 0 0 10px 35px;
   &-list {
     display: flex;
-    gap: 20px;
+    gap: 18px;
     height: 40px;
   }
   &-item {
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     &__button {
       cursor: pointer;
       font-size: var(--fs-14);

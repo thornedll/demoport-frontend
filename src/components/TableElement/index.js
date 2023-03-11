@@ -6,6 +6,7 @@ const TableElement = ({
   id,
   checkedArray = [],
   toggleCheckedRows,
+  columns,
   ...props
 }) => {
   const rowClasses = classNames({
@@ -16,6 +17,31 @@ const TableElement = ({
   const handleChange = (e) => {
     toggleCheckedRows(e.target.value);
   };
+
+  let tempTableData = Object.entries(props);
+  tempTableData.shift();
+  const tableData = tempTableData;
+
+  const tableRowData = columns.map((column, index) =>
+    column.active ? (
+      <div
+        style={{
+          width: column.width + 20,
+          justifyContent:
+            typeof tableData[index][1] === "number" ? "center" : "none"
+        }}
+        key={tableData[index][0]}
+      >
+        <span>
+          {typeof tableData[index][1] !== "boolean"
+            ? tableData[index][1]
+            : tableData[index][1] === true
+            ? "да"
+            : ""}
+        </span>
+      </div>
+    ) : null
+  );
 
   return (
     <li className={rowClasses} key={props.key}>
@@ -49,35 +75,7 @@ const TableElement = ({
           </defs>
         </svg>
       </button>
-      {props.complexCode !== null ? (
-        <div className={style["complex-code"]}>{props.complexCode}</div>
-      ) : null}
-      {props.businessLine !== null ? (
-        <div className={style["business-line"]}>{props.businessLine}</div>
-      ) : null}
-      <div className={style["business-line-code"]}>
-        {props.businessLineCode}
-      </div>
-      <div className={style["service-line"]}>{props.serviceLine}</div>
-      <div className={style["service-line-code"]}>{props.serviceLineCode}</div>
-      <div className={style["service"]}>{props.service}</div>
-      <div className={style["service-code"]}>{props.serviceCode}</div>
-      <div className={style["service-element"]}>{props.serviceElement}</div>
-      <div className={style["service-element-code"]}>
-        {props.serviceElementCode}
-      </div>
-      <div className={style["tariff"]}>{props.tariff}</div>
-      <div className={style["tariff-code"]}>{props.tariffCode}</div>
-      <div className={style["tariffication-element"]}>
-        {props.tarifficationElement}
-      </div>
-      <div className={style["tariffication-unit"]}>
-        {props.tarifficationUnit}
-      </div>
-      <div className={style["tariff-type"]}>{props.tariffType}</div>
-      <div className={style["recalculation"]}>
-        {props.recalculation ? "да" : ""}
-      </div>
+      {tableRowData}
     </li>
   );
 };
