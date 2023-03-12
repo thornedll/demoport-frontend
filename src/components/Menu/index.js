@@ -13,11 +13,19 @@ const Menu = ({
   changeIncludingArchive,
   countChecked,
   columns,
-  setColumns
+  setColumns,
+  getServices,
+  setServices,
+  dataServices
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [modalType, setModalType] = useState("");
   const isRowManagementHidden = !Boolean(countChecked);
+
+  const displayServices = (value) => {
+    const srv = getServices(value, dataServices);
+    setServices(srv);
+  };
 
   function handleChange(e) {
     changeIncludingArchive(e.target.checked);
@@ -49,6 +57,7 @@ const Menu = ({
             placeholder="Поиск..."
             value={formik.values.search}
             onChange={formik.handleChange}
+            onKeyUp={() => displayServices(formik.values.search)}
             onBlur={formik.onBlur}
             withIcon={true}
             icon="search"

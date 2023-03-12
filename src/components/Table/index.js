@@ -1,20 +1,18 @@
 import TableElement from "../TableElement";
 import style from "./styles/table.module.scss";
-import data from "../../data.json";
 
 const Table = ({
   includingArchive,
   checkedArray,
   toggleCheckedRows,
-  columns
+  columns,
+  services
 }) => {
-  const services = data.services;
-
   const servicesItems = includingArchive
     ? services.map((content) => (
         <TableElement
           id={content.id}
-          key={content.id}
+          key={`table-archive-${content.id}`}
           checkedArray={checkedArray}
           toggleCheckedRows={toggleCheckedRows}
           columns={columns}
@@ -46,7 +44,7 @@ const Table = ({
         content.isArchive === false ? (
           <TableElement
             id={content.id}
-            key={content.id}
+            key={`table-el-${content.id}`}
             checkedArray={checkedArray}
             toggleCheckedRows={toggleCheckedRows}
             columns={columns}

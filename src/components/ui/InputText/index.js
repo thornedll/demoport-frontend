@@ -12,7 +12,8 @@ const InputText = ({
   placeholder,
   withIcon = false,
   icon,
-  errors
+  errors,
+  onKeyUp
 }) => {
   const classes = classNames({
     [style["input-text"]]: true,
@@ -32,6 +33,7 @@ const InputText = ({
           onChange={onChange}
           onBlur={onBlur}
           value={value}
+          onKeyUp={onKeyUp}
         />
         {withIcon ? (
           <button>

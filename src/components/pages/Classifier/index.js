@@ -3,6 +3,7 @@ import Table from "../../Table";
 import Menu from "../../Menu";
 import TableFilters from "../../TableFilters";
 import { formElementsContent } from "../../../form-data";
+import data from "../../../data.json";
 
 const Classifier = () => {
   const [includingArchive, setIncludeArchive] = useState(false);
@@ -17,6 +18,15 @@ const Classifier = () => {
       width: c.width
     }))
   );
+  const dataServices = data.services;
+  const [services, setServices] = useState(dataServices);
+
+  const getServices = (text, services) => {
+    return services.filter((service) => {
+      const regex = new RegExp(text, "gi");
+      return service.businessLine.match(regex);
+    });
+  };
 
   const toggleCheckedRows = (id) => {
     let newIdsArr = [];
@@ -42,6 +52,9 @@ const Classifier = () => {
         countChecked={checkedArray.length}
         columns={columns}
         setColumns={setColumns}
+        getServices={getServices}
+        setServices={setServices}
+        dataServices={dataServices}
       />
       <TableFilters
         toggleAllCheckedRows={toggleAllCheckedRows}
@@ -53,6 +66,7 @@ const Classifier = () => {
         checkedArray={checkedArray}
         toggleCheckedRows={toggleCheckedRows}
         columns={columns}
+        services={services}
       />
     </div>
   );

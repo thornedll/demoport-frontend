@@ -30,7 +30,7 @@ const TableElement = ({
           justifyContent:
             typeof tableData[index][1] === "number" ? "center" : "none"
         }}
-        key={tableData[index][0]}
+        key={`row-data-${tableData[index][0]}`}
       >
         <span>
           {typeof tableData[index][1] !== "boolean"
@@ -44,7 +44,7 @@ const TableElement = ({
   );
 
   return (
-    <li className={rowClasses} key={props.key}>
+    <li className={rowClasses}>
       <Checkbox
         value={id}
         checked={checkedArray?.includes(id)}
