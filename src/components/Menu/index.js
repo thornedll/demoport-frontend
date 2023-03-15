@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useFormik } from "formik";
 import classNames from "classnames";
 import { Modal } from "../Modal";
@@ -16,10 +15,17 @@ const Menu = ({
   setColumns,
   getServices,
   setServices,
-  dataServices
+  dataServices,
+  archiveServices,
+  deleteServices,
+  copyService,
+  isOpen,
+  setIsOpen,
+  handleClose,
+  modalType,
+  setModalType,
+  services
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [modalType, setModalType] = useState("");
   const isRowManagementHidden = !Boolean(countChecked);
 
   const displayServices = (value) => {
@@ -43,8 +49,6 @@ const Menu = ({
     [style["menu__middle"]]: true,
     [style["menu__middle_hidden"]]: isRowManagementHidden
   });
-
-  const handleClose = () => setIsOpen(false);
 
   return (
     <div className={style["menu"]}>
@@ -135,18 +139,21 @@ const Menu = ({
             variant="button__copy"
             withIcon={true}
             icon="copy"
+            onClick={() => copyService()}
           />
           <Button
             btnName="В архив"
             variant="button__transparent"
             withIcon={true}
             icon="folder"
+            onClick={() => archiveServices()}
           />
           <Button
             btnName="Удалить"
             variant="button__delete"
             withIcon={true}
             icon="trash"
+            onClick={() => deleteServices()}
           />
         </div>
       </div>
@@ -164,6 +171,8 @@ const Menu = ({
         type={modalType}
         columns={columns}
         setColumns={setColumns}
+        services={services}
+        setServices={setServices}
       />
     </div>
   );

@@ -5,7 +5,16 @@ import style from "./styles/modal.module.scss";
 import CreateService from "./CreateService";
 import ColumnsViewSettings from "./ColumnsViewSettings";
 
-const Modal = ({ isOpen, handleClose, type, columns, setColumns }) => {
+const Modal = ({
+  isOpen,
+  handleClose,
+  type,
+  columns,
+  setColumns,
+  services,
+  setServices,
+  chosenService = {}
+}) => {
   const modalClasses = classNames({
     [style["modal"]]: true,
     [style["modal_right"]]: type === "createService",
@@ -32,7 +41,12 @@ const Modal = ({ isOpen, handleClose, type, columns, setColumns }) => {
             </button>
           </div>
           {type === "createService" ? (
-            <CreateService />
+            <CreateService
+              handleClose={handleClose}
+              services={services}
+              setServices={setServices}
+              chosenService={chosenService}
+            />
           ) : type === "columnsViewSettings" ? (
             <ColumnsViewSettings
               rowElementsContent={columns}

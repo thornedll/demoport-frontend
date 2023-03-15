@@ -4,8 +4,74 @@ import FormElement from "../FormElement";
 import Button from "../ui/Button";
 import { formElementsContent } from "../../form-data";
 import style from "./styles/modal.module.scss";
+import uuid from "react-uuid";
 
-const CreateService = () => {
+const CreateService = ({
+  handleClose,
+  services,
+  setServices,
+  chosenService
+}) => {
+  const createNewService = () => {
+    let newServices = [...services];
+    newServices.push({
+      id: uuid(),
+      complexCode: complexCode,
+      businessLine: formElementsContent[1].options
+        .map((option) => (option.value === inputValueLOB ? option.label : null))
+        .toString()
+        .replace(/,/g, ""),
+      businessLineCode: inputValueLOB,
+      serviceLine: formElementsContent[3].options
+        .map((option) =>
+          option.value === inputValueSRVLINE ? option.label : null
+        )
+        .toString()
+        .replace(/,/g, ""),
+      serviceLineCode: inputValueSRVLINE,
+      service: formElementsContent[5].options
+        .map((option) => (option.value === inputValueSRV ? option.label : null))
+        .toString()
+        .replace(/,/g, ""),
+      serviceCode: inputValueSRV,
+      serviceElement: formElementsContent[7].options
+        .map((option) =>
+          option.value === inputValueSRVEL ? option.label : null
+        )
+        .toString()
+        .replace(/,/g, ""),
+      serviceElementCode: inputValueSRVEL,
+      tariff: formElementsContent[9].options
+        .map((option) =>
+          option.value === inputValueTARIFF ? option.label : null
+        )
+        .toString()
+        .replace(/,/g, ""),
+      tariffCode: inputValueTARIFF,
+      tarifficationElement: formElementsContent[11].options
+        .map((option) =>
+          option.value === inputValueTARIFFELEM ? option.label : null
+        )
+        .toString()
+        .replace(/,/g, ""),
+      tarifficationUnit: formElementsContent[12].options
+        .map((option) =>
+          option.value === inputValueTARIFFUNIT ? option.label : null
+        )
+        .toString()
+        .replace(/,/g, ""),
+      tariffType: formElementsContent[13].options
+        .map((option) =>
+          option.value === inputValueTARIFFTYPE ? option.label : null
+        )
+        .toString()
+        .replace(/,/g, ""),
+      recalculation: inputValueRECALC === 0 ? false : true,
+      isArchive: false
+    });
+    setServices(newServices);
+  };
+
   const formik = useFormik({
     initialValues: {
       complexCode: "",
@@ -14,10 +80,13 @@ const CreateService = () => {
       serviceLine: "",
       serviceLineCode: 0,
       tariff: "",
-      tariffCode: 0,
+      tariffCode: 0
     },
     validationSchema: null,
-    onSubmit: () => {}
+    onSubmit: () => {
+      createNewService();
+      handleClose();
+    }
   });
 
   const [inputValueLOB, setInputValueLOB] = useState(0);
@@ -47,67 +116,127 @@ const CreateService = () => {
     inputValueTARIFF
   ]);
 
-  const formElements = formElementsContent.map((c) =>
-    c.isSelect ? (
-      <FormElement
-        key={c.id}
-        isSelect={c.isSelect}
-        label={c.label}
-        id={c.id}
-        required={c.required}
-        options={c.options}
-        setInputValue={
-          c.id === "001"
-            ? setInputValueLOB
-            : c.id === "003"
-            ? setInputValueSRVLINE
-            : c.id === "005"
-            ? setInputValueSRV
-            : c.id === "007"
-            ? setInputValueSRVEL
-            : c.id === "009"
-            ? setInputValueTARIFF
-            : c.id === "011"
-            ? setInputValueTARIFFELEM
-            : c.id === "012"
-            ? setInputValueTARIFFUNIT
-            : c.id === "013"
-            ? setInputValueTARIFFTYPE
-            : c.id === "014"
-            ? setInputValueRECALC
-            : null
-        }
-      />
-    ) : (
-      <FormElement
-        key={c.id}
-        isSelect={c.isSelect}
-        label={c.label}
-        id={c.id}
-        required={c.required}
-        inputValue={
-          c.id === "000"
-            ? complexCode
-            : c.id === "002"
-            ? inputValueLOB
-            : c.id === "004"
-            ? inputValueSRVLINE
-            : c.id === "006"
-            ? inputValueSRV
-            : c.id === "008"
-            ? inputValueSRVEL
-            : c.id === "010"
-            ? inputValueTARIFF
-            : null
-        }
-      />
-    )
-  );
+  const formElements =
+    chosenService !== {}
+      ? formElementsContent.map((c) =>
+          c.isSelect ? (
+            <FormElement
+              key={c.id}
+              isSelect={c.isSelect}
+              label={c.label}
+              id={c.id}
+              required={c.required}
+              options={c.options}
+              setInputValue={
+                c.id === "001"
+                  ? setInputValueLOB
+                  : c.id === "003"
+                  ? setInputValueSRVLINE
+                  : c.id === "005"
+                  ? setInputValueSRV
+                  : c.id === "007"
+                  ? setInputValueSRVEL
+                  : c.id === "009"
+                  ? setInputValueTARIFF
+                  : c.id === "011"
+                  ? setInputValueTARIFFELEM
+                  : c.id === "012"
+                  ? setInputValueTARIFFUNIT
+                  : c.id === "013"
+                  ? setInputValueTARIFFTYPE
+                  : c.id === "014"
+                  ? setInputValueRECALC
+                  : null
+              }
+            />
+          ) : (
+            <FormElement
+              key={c.id}
+              isSelect={c.isSelect}
+              label={c.label}
+              id={c.id}
+              required={c.required}
+              inputValue={
+                c.id === "000"
+                  ? complexCode
+                  : c.id === "002"
+                  ? inputValueLOB
+                  : c.id === "004"
+                  ? inputValueSRVLINE
+                  : c.id === "006"
+                  ? inputValueSRV
+                  : c.id === "008"
+                  ? inputValueSRVEL
+                  : c.id === "010"
+                  ? inputValueTARIFF
+                  : null
+              }
+            />
+          )
+        )
+      : formElementsContent.map((c) =>
+          c.isSelect ? (
+            <FormElement
+              key={c.id}
+              isSelect={c.isSelect}
+              label={c.label}
+              id={c.id}
+              required={c.required}
+              options={c.options}
+              setInputValue={
+                c.id === "001"
+                  ? setInputValueLOB
+                  : c.id === "003"
+                  ? setInputValueSRVLINE
+                  : c.id === "005"
+                  ? setInputValueSRV
+                  : c.id === "007"
+                  ? setInputValueSRVEL
+                  : c.id === "009"
+                  ? setInputValueTARIFF
+                  : c.id === "011"
+                  ? setInputValueTARIFFELEM
+                  : c.id === "012"
+                  ? setInputValueTARIFFUNIT
+                  : c.id === "013"
+                  ? setInputValueTARIFFTYPE
+                  : c.id === "014"
+                  ? setInputValueRECALC
+                  : null
+              }
+            />
+          ) : (
+            <FormElement
+              key={c.id}
+              isSelect={c.isSelect}
+              label={c.label}
+              id={c.id}
+              required={c.required}
+              inputValue={
+                c.id === "000"
+                  ? complexCode
+                  : c.id === "002"
+                  ? inputValueLOB
+                  : c.id === "004"
+                  ? inputValueSRVLINE
+                  : c.id === "006"
+                  ? inputValueSRV
+                  : c.id === "008"
+                  ? inputValueSRVEL
+                  : c.id === "010"
+                  ? inputValueTARIFF
+                  : null
+              }
+            />
+          )
+        );
 
   return (
     <div>
       <div className={style["modal-header"]}>
-        <h2 className={style["modal-header__text"]}>Добавить услугу</h2>
+        <h2 className={style["modal-header__text"]}>
+          {!chosenService ? "Добавить услугу" : "Редактировать услугу"}
+        </h2>
       </div>
       <Formik validateOnChange={false}>
         <Form className={style["modal-form"]} onSubmit={formik.handleSubmit}>

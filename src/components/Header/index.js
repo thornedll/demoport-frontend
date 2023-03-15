@@ -9,8 +9,7 @@ import style from "./styles/header.module.scss";
 
 const Header = ({
   isProfilePopupVisible,
-  setIsProfilePopupVisible,
-  handleCloseOutside
+  setIsProfilePopupVisible
 }) => {
   const location = useLocation();
   const userName = data.users[0].lastName + " " + data.users[0].firstName;
@@ -81,7 +80,6 @@ const Header = ({
         </button>
         <ProfileModal
           isOpen={isProfilePopupVisible}
-          handleCloseOutside={handleCloseOutside}
         />
       </div>
     </header>

@@ -7,10 +7,6 @@ import { PAGES } from "../../../consts";
 const Layout = ({ page }) => {
   const [isProfilePopupVisible, setIsProfilePopupVisible] = useState(false);
 
-  const handleCloseOutside = (event) => {
-    if (event.target.id === "profile-popup") setIsProfilePopupVisible(false);
-  };
-
   let targetPage;
 
   switch (page) {
@@ -37,7 +33,6 @@ const Layout = ({ page }) => {
     <>
       {page !== PAGES.login ? (
         <Header
-          handleCloseOutside={handleCloseOutside}
           isProfilePopupVisible={isProfilePopupVisible}
           setIsProfilePopupVisible={setIsProfilePopupVisible}
         />
